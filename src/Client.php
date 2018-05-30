@@ -7,7 +7,7 @@ namespace NorthernLights\IPSConnectApi;
 use Guzzle\Http\Exception\BadResponseException;
 use Guzzle\Http\Client as GuzzleHttpClient;
 use GuzzleHttp\ClientInterface;
-use NorthernLights\IPSConnectApi\Action\ApiActionInterface;
+use NorthernLights\IPSConnectApi\Action\Interfaces\ActionInterface;
 use NorthernLights\IPSConnectApi\Provider\ConfigProviderInterface;
 use NorthernLights\IPSConnectApi\Provider\ResponseProvider;
 use NorthernLights\IPSConnectApi\Provider\ResponseProviderInterface;
@@ -43,12 +43,12 @@ class Client
     /**
      * Send request / do action
      *
-     * @param ApiActionInterface $action
+     * @param ActionInterface $action
      *
      * @return ResponseProviderInterface
      *
      */
-    public function do(ApiActionInterface $action): ResponseProviderInterface
+    public function do(ActionInterface $action): ResponseProviderInterface
     {
         return new ResponseProvider(
             $this->request(
