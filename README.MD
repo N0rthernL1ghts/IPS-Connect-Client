@@ -1,2 +1,4 @@
 # IPS Connect API Client
-Work in progress
+Client for IPS Connect API (IPS Community Suite)
+
+### Work in progress

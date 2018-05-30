@@ -1,6 +1,6 @@
 {
     "name": "northern-lights/ips-connect-client",
-    "description": "API client for IPS Connect API (IPS Community Suite)",
+    "description": "Client for IPS Connect API (IPS Community Suite)",
     "type": "library",
     "license": "MIT",
     "authors": [
