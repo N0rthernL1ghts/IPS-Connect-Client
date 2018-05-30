@@ -1,1 +1,2 @@
-# IPSConnect API Client
+# IPS Connect API Client
+Work in progress
