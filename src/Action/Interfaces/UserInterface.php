@@ -15,7 +15,35 @@ interface UserInterface extends ActionInterface
      *
      * @param int $id
      *
-     * @return int
+     * @return self
      */
-    public function setUserId(int $id): int;
+    public function setUserId(int $id): self;
+
+    /**
+     * Set user display name
+     *
+     * @param string $displayName
+     *
+     * @return self
+     */
+    public function setDisplayName(string $displayName): self;
+
+    /**
+     * Set user email
+     *
+     * @param string $email
+     *
+     * @return self
+     */
+    public function setEmail(string $email): self;
+
+    /**
+     * Set user password (not hash)
+     *
+     * @param string $password
+     * @param $salt
+     *
+     * @return self
+     */
+    public function setPassword(string $password, $salt): self;
 }
