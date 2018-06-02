@@ -9,9 +9,9 @@ use Guzzle\Http\Client as GuzzleHttpClient;
 use GuzzleHttp\ClientInterface;
 use NorthernLights\IPSConnectApi\Action\Interfaces\ActionInterface;
 use NorthernLights\IPSConnectApi\Provider\ConfigProviderInterface;
-use NorthernLights\IPSConnectApi\Provider\ResponseProvider;
-use NorthernLights\IPSConnectApi\Provider\ResponseProviderInterface;
-use Psr\Http\Message\ResponseInterface;
+use NorthernLights\IPSConnectApi\Service\Response;
+use NorthernLights\IPSConnectApi\Service\ResponseInterface;
+use Psr\Http\Message\ResponseInterface as PsrResponseInterface;
 
 /**
  * Class Client
@@ -45,12 +45,12 @@ class Client
      *
      * @param ActionInterface $action
      *
-     * @return ResponseProviderInterface
+     * @return ResponseInterface
      *
      */
-    public function do(ActionInterface $action): ResponseProviderInterface
+    public function do(ActionInterface $action): ResponseInterface
     {
-        return new ResponseProvider(
+        return new Response(
             $this->request(
                 $action->compileRequest()
             )
@@ -62,9 +62,9 @@ class Client
      *
      * @param array $form
      *
-     * @return ResponseInterface
+     * @return PsrResponseInterface
      */
-    private function request(array $form): ResponseInterface
+    private function request(array $form): PsrResponseInterface
     {
         $client   = $this->httpClient;
         $response = null;

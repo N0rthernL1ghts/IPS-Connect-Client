@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace NorthernLights\IPSConnectApi\Provider;
+namespace NorthernLights\IPSConnectApi\Service;
 
-use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\ResponseInterface as PsrResponseInterface;
 
 /**
- * Interface ResponseProviderInterface
- * @package NorthernLights\IPSConnectApi\Provider
+ * Interface ResponseInterface
+ * @package NorthernLights\IPSConnectApi\Service
  */
-interface ResponseProviderInterface
+interface ResponseInterface
 {
     /**
      * Was request successful?
@@ -29,7 +29,7 @@ interface ResponseProviderInterface
     /**
      * Http response
      *
-     * @return ResponseInterface
+     * @return PsrResponseInterface
      */
-    public function getHttpResponse(): ResponseInterface;
+    public function getHttpResponse(): PsrResponseInterface;
 }

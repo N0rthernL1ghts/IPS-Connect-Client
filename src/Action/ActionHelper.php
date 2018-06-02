@@ -10,6 +10,8 @@ namespace NorthernLights\IPSConnectApi\Action;
  */
 abstract class ActionHelper
 {
+    protected $request;
+
     /**
      * {@inheritdoc}
      * NorthernLights\IPSConnectApi\Action\Interfaces\ActionInterface
